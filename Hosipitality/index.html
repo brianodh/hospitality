@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Meal Payment Form</h1>
+        <form action="form.php" method="POST" id="paymentForm">
+            <div class="form-group">
+                <label for="waiterName">Waiter's Name:</label>
+                <input type="text" id="waiterName" name="waiterName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mealTaken">Meal Taken:</label>
+                <input type="text" id="mealTaken" name="mealTaken" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label>Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="cash">Cash</option>
+                    <option value="mpesa">M-Pesa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="totalAmount">Total Amount:</label>
+                <input type="number" id="totalAmount" name="totalAmount" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
